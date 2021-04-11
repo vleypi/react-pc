@@ -1,5 +1,4 @@
 import React from 'react'
-import classNames from 'classnames'
 
 const Sort = React.memo(function Sort({sortName,onSelectSort,activeSortType}) {
     const [activeSort,setActiveSort] = React.useState(0)
@@ -33,9 +32,9 @@ const Sort = React.memo(function Sort({sortName,onSelectSort,activeSortType}) {
 
 
     return (
-        <div class="sort" ref={ref}>
+        <div className="sort" ref={ref}>
             <p>Сортировка по: <span onClick={onVisableSort}>{sortChoose}</span></p>
-            {visableSort && <div class="sort-block">
+            {visableSort && <div className="sort-block">
                 <ul>
                     {sortName.map((sort,index)=>(
                         <li

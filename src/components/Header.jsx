@@ -8,13 +8,13 @@ import shoppingCart from '../assets/img/shopping-cart.svg'
 function Header() {
     return (
         <header>
-        <div class="content">
-            <NavLink to='/' class="logo-name">
+        <div className="content">
+            <NavLink to='/' className="logo-name">
                 <img src={graphicCart} />
                 <p>REACT-PC</p>
             </NavLink>
             <NavLink to='/cart'>
-            <div class="cart-nav">
+            <div className="cart-nav">
                 <p>555 ₽</p>
                 <div>
                     <img src={shoppingCart} />

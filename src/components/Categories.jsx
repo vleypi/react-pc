@@ -38,11 +38,11 @@ const Categories = React.memo(function Categories({items,onClickCategory}) {
 
     return (
         <div className="Categories" ref={ref}>
-            <div class="categories" onClick={onVisable}>
+            <div className="categories" onClick={onVisable}>
                 <p>Каталог</p>
                 <img src={hamburger}/>
             </div>
-            <div class={`${"categories-block"} ${visableCat === true ? 'categories-block-active' : ''}`}>
+            <div className={`${"categories-block"} ${visableCat === true ? 'categories-block-active' : ''}`}>
                 <ul>
                     <li onClick={()=>onAllActive(null)} className={activeItem === null ? 'active' : ''}>Все</li>
                     {items.map((catName,index)=>(

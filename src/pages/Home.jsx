@@ -1,7 +1,5 @@
 import React from 'react'
 import {useSelector,useDispatch} from 'react-redux'
-import {NavLink} from 'react-router-dom'
-
 
 import {fetchElem} from '../redux/elem'
 import {setCategory,setSort} from '../redux/filters'
@@ -37,19 +35,22 @@ function Home() {
     const onSelectSort = (index)=>{
         dispatch(setSort(index))
     }
+
+
+    
     return (
         <div>
-            <section class="categories-and-sort">
-                <div class="content">
+            <section className="categories-and-sort">
+                <div className="content">
                     <Categories onClickCategory={onSelectCategory} items={categories}/>
                     <Sort sortName={sortName} onSelectSort={onSelectSort} activeSortType={sortName.type}/>
                 </div>
             </section>
-            <section class="all-items">
-                <div class="content">
+            <section className="all-items">
+                <div className="content">
                     <h1>Все товары:</h1>
                     {element.map((obj)=>(
-                        <NavLink to={`/${obj.id}`}><Items {...obj} key={obj.id}/></NavLink>
+                        <Items {...obj} key={obj.id}/>
                     ))}
                 </div>
             </section> 
