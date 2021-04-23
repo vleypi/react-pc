@@ -16,9 +16,8 @@ function PageItem(props) {
     React.useEffect(()=>{
         dispatch(getItem(props.match.params.id))
     },[])
-    console.log(props)
     return (
-        <div>
+        <div className="content">
             {windowItem.map((index)=>(
                 <ItemsPage {...index} />
             ))}

@@ -7,7 +7,7 @@
             "name": "Видеокарта MSI GeForce GTX 1650 D6 GAMING X",
             "price": 23000,
             "category": 0,
-            "popular": 4
+            "popular": 4.0
         },
         {
             "id": 2,
@@ -25,7 +25,7 @@
             "name": "Материнская плата ASRock Z490 Extreme4",
             "price": 23000,
             "category": 2,
-            "popular": 3
+            "popular": 3.0
         }
     ]
 }

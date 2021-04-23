@@ -5,9 +5,16 @@ import '../assets/css/header.css'
 import graphicCart from '../assets/img/graphics-card.svg'
 import shoppingCart from '../assets/img/shopping-cart.svg'
 
+import {setCategory} from '../redux/filters'
+import {useDispatch} from 'react-redux'
+
 function Header() {
+    const dispatch = useDispatch()
+    const FetchNull = (index)=>{
+        dispatch(setCategory(index))
+    }
     return (
-        <header>
+        <header onClick={()=>FetchNull(null)}>
         <div className="content">
             <NavLink to='/' className="logo-name">
                 <img src={graphicCart} />
