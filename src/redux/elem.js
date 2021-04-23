@@ -11,6 +11,11 @@ const elements = (state=initialState, action) =>{
                 ...state,
                 element: action.payload,
             }
+        case 'SET_ITEM':
+            return{
+                ...state,
+                item: action.payload
+            }
         default:
             return state
     }
@@ -21,10 +26,13 @@ export const setElem = (elem) =>({
     payload: elem,
 })
 
+
 export const fetchElem = (category,sort) => (dispatch) =>{
-    axios.get(`http://localhost:3001/elem?${category !== null ? `category=${category}` : ''}&_sort=${sort.type}&_order=${sort.order}`).then(({ data }) => {
+    axios.get(`http://localhost:3002/elem?${category !== null ? `category=${category}` : ''}&_sort=${sort.type}&_order=${sort.order}`).then(({ data }) => {
         dispatch(setElem(data));
     });
 }
+
+
 
 export default elements

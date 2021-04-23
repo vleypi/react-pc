@@ -9,6 +9,7 @@ import '../assets/css/categories.css'
 import Categories from '../components/Categories'
 import Sort from '../components/Sort'
 import Items from '../components/Items'
+import { NavLink } from 'react-router-dom'
 
 
 
@@ -35,8 +36,6 @@ function Home() {
     const onSelectSort = (index)=>{
         dispatch(setSort(index))
     }
-
-
     
     return (
         <div>
@@ -50,7 +49,7 @@ function Home() {
                 <div className="content">
                     <h1>Все товары:</h1>
                     {element.map((obj)=>(
-                        <Items {...obj} key={obj.id}/>
+                        <NavLink to={`/${obj.id}`}><Items {...obj} key={obj.id}/></NavLink>
                     ))}
                 </div>
             </section> 

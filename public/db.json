@@ -1,7 +1,8 @@
 {
     "elem":[
         {
-            "id":"videocard/1",
+            "id": 1,
+            "path": "/videocard/1",
             "image": "https://c.dns-shop.ru/thumb/st4/fit/500/500/57a696c54ba73600df7c9f5b006f47cd/6895c05e6593667ba3120074be31b365104490d8d2997a6e814a47a3629d0267.jpg",
             "name": "Видеокарта MSI GeForce GTX 1650 D6 GAMING X",
             "price": 23000,
@@ -9,7 +10,8 @@
             "popular": 4
         },
         {
-            "id":"processor/1",
+            "id": 2,
+            "path": "/videocard/2",
             "image": "https://c.dns-shop.ru/thumb/st4/fit/500/500/8a24bc60ae6d69b120d238da94b850c7/aeb8cc94e6f6770ce048f1b12649a340f65d9ad76c612b2aa9b0998d7413299d.jpg",
             "name": "Процессор Intel Core i5-10500 BOX",
             "price": 18900,
@@ -17,82 +19,13 @@
             "popular": 4.5
         },
         {
-            "id":"materinskaya-plata/1",
+            "id": 3,
+            "path": "/videocard/3",
             "image": "https://c.dns-shop.ru/thumb/st4/fit/500/500/d7872c7254489791555b8e5ebaa0c666/c38ad5f5d7c795c6c95b46e80f50e336ef9ed93fc6e34999c0883be8ed568ccc.png",
             "name": "Материнская плата ASRock Z490 Extreme4",
             "price": 23000,
             "category": 2,
             "popular": 3
-        },
-        {
-            "id":"OZU/1",
-            "image": "https://c.dns-shop.ru/thumb/st1/fit/500/500/b342e8d518188b2b845e2d4d33ec6cea/cd16720131af36f593fa7368fefa5735e8ffeb554ba5f0ef7c70fe0a3794f517.jpg",
-            "name": "Оперативная память Goodram Play 8 ГБ",
-            "price": 6050,
-            "category": 3,
-            "popular": 2
-        },
-        {
-            "id":"bp/1",
-            "image": "https://c.dns-shop.ru/thumb/st1/fit/500/500/055d7f6a9a44da4f490e84cb50a5d1fe/f2aca771750473db5b4382c8cd799d1e5d8827f0cb96f973aea95ed92e9e8e44.jpg",
-            "name": "Блок питания Thermaltake Litepower RGB 550W",
-            "price": 4050,
-            "category": 4,
-            "popular": 3
-        },
-        {
-            "id":"korpus/1",
-            "image": "https://c.dns-shop.ru/thumb/st1/fit/500/500/be9532f8e0fb61d200fe706a1631edb7/0aa876ca34d687f8b2734dc4297e315029ea791bba812ac94dbfc7022632c99c.jpg",
-            "name": "Корпус DEEPCOOL MATREXX 50 ADD-RGB 3F",
-            "price": 4500,
-            "category": 5,
-            "popular": 4.6
-        },
-        {
-            "id":"nakopitel/1",
-            "image": "https://c.dns-shop.ru/thumb/st1/fit/500/500/8e542f768317def8a138f51c266cea64/d0a52e83f03f4d74d696a498732edf27af19ddc97d8bb62e98357fb4bde4ef61.jpg",
-            "name": "250 ГБ SSD-накопитель Samsung 870 EVO",
-            "price": 4000,
-            "category": 6,
-            "popular": 3
-        },
-        {
-            "id":"ohladjdenie/1",
-            "image": "https://c.dns-shop.ru/thumb/st4/fit/500/500/8c33159a9cc21d0e0fdbfbb37ddf2960/48a748488807809df6bcb82ce3af180f4512679a9b9b2225748542ab5ce29007.jpg",
-            "name": "Кулер для процессора ID-Cooling SE-903-B V2",
-            "price": 1150,
-            "category": 7,
-            "popular": 4
-        },
-        {
-            "id":"ohladjdenie/2",
-            "image": "https://c.dns-shop.ru/thumb/st1/fit/500/500/e80821f5811cb2bf65310624ed4a4284/e1cf6ac7d9674ac020362a2570c7c8e5149fec6195058bcbf60188e558dbc88a.jpg",
-            "image2": "https://c.dns-shop.ru/thumb/st1/fit/500/500/2b90f9726e4399b7568de6983e307fa6/5e0177a5bc6b1b1825822627110fbc055ee10e5ca81c725e27f576e0891afdc9.jpg",
-            "image3": "https://c.dns-shop.ru/thumb/st4/fit/500/500/15acba5cb6de82055c5a5134dece9fca/6e92ef62b8c65080b09678c29ed2d0ef4289629cbb3a94f6a850b511efdd4584.jpg",
-            "name": "Кулер для процессора PCCooler Q102",
-            "price": 1050,
-            "category": 7,
-            "popular": 3.5
-        },
-        {
-            "id":"ohladjdenie/3",
-            "image": "https://c.dns-shop.ru/thumb/st1/fit/500/500/862da6797d9451f9bb9caf26231ad772/e90954cf5a0301abaa57bf42606c292c4e1835ac29107d7e66f9f02cc1afdee6.jpg",
-            "image2": "https://c.dns-shop.ru/thumb/st1/fit/500/500/aa2a97ad22ca08368c8f931eedf11c05/d270329d160817ac592b25d7b51f63cf011d418c46b37b36540a78572b51973e.jpg",
-            "image3": "https://c.dns-shop.ru/thumb/st4/fit/500/500/5e478abfa2a22f0f334bfdf8c19dc16a/fd13a42eeb9760ef18c936c2a811e0a714cc5ce89e2c949ad0401335626c40a1.jpg",
-            "name": "Кулер для процессора ID-Cooling SE-903-R V2",
-            "price": 1150,
-            "category": 7,
-            "popular": 4.5
-        },
-        {
-            "id":"ohladjdenie/4",
-            "image": "https://c.dns-shop.ru/thumb/st4/fit/500/500/fd6dcc4ba63f4c7f43a310977957df1b/c8e83a10970f149b461b43378aa0050593975d0693f751fa1e37e647728b4319.png",
-            "image2": "https://c.dns-shop.ru/thumb/st4/fit/500/500/1079c9ba72dec852363986b4c1b9f6b4/a7864e7e0a6bc683210c647b3b406d93732fcd2919e866900d51dac2489bf1c0.jpg",
-            "image3": "https://c.dns-shop.ru/thumb/st4/fit/500/500/5e478abfa2a22f0f334bfdf8c19dc16a/fd13a42eeb9760ef18c936c2a811e0a714cc5ce89e2c949ad0401335626c40a1.jpg",
-            "name": "Вентилятор Aerocool Frost 9 FRGB",
-            "price": 350,
-            "category": 7,
-            "popular": 4.5
         }
     ]
 }
