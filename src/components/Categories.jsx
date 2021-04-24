@@ -40,7 +40,7 @@ const Categories = React.memo(function Categories({items,onClickCategory}) {
         <div className="Categories" ref={ref}>
             <div className="categories" onClick={onVisable}>
                 <p>Каталог</p>
-                <img src={hamburger}/>
+                <img src={hamburger} alt="hamburger"/>
             </div>
             <div className={`${"categories-block"} ${visableCat === true ? 'categories-block-active' : ''}`}>
                 <ul>

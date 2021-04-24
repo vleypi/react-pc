@@ -2,13 +2,14 @@ import React from 'react'
 import PreLoader from '../components/PreLoader'
 
 //library
-import {useDispatch,useSelector, connect} from 'react-redux'
+import {useDispatch,useSelector} from 'react-redux'
 import { withRouter } from 'react-router'
 import ItemsPage from '../components/ItemsPage'
 
 
 //redux
 import {getItem} from '../redux/getItem'
+import Categories from '../components/Categories'
 
 
 function PageItem(props) {
@@ -21,8 +22,8 @@ function PageItem(props) {
     },[])
     return (
         <div className="content">
-            {isLoaded ? windowItem.map((index)=>(
-                <ItemsPage {...index} />
+            {isLoaded ? windowItem.map((index,id)=>(
+                <ItemsPage {...index} key={`${index}_${id}`}/>
             )) : <PreLoader /> }
         </div>
     )

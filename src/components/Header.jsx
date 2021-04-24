@@ -7,26 +7,24 @@ import shoppingCart from '../assets/img/shopping-cart.svg'
 
 import {setCategory} from '../redux/filters'
 import {useDispatch} from 'react-redux'
-import { getBoolean } from '../redux/getItem'
 
 function Header() {
     const dispatch = useDispatch()
     const FetchNull = (index)=>{
         dispatch(setCategory(index))
-        dispatch(getBoolean())
     }
     return (
         <header onClick={()=>FetchNull(null)}>
         <div className="content">
             <NavLink to='/' className="logo-name">
-                <img src={graphicCart} />
+                <img src={graphicCart} alt="graphicCart"/>
                 <p>REACT-PC</p>
             </NavLink>
             <NavLink to='/cart'>
             <div className="cart-nav">
                 <p>555 ₽</p>
                 <div>
-                    <img src={shoppingCart} />
+                    <img src={shoppingCart} alt="shoppingCart"/>
                     <p>3</p>
                 </div>
             </div>

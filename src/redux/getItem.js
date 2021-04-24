@@ -1,15 +1,7 @@
 import axios from "axios"
 
 const initialState = {
-    windowItems: [{
-        id:'',
-        path:'',
-        image:'',
-        name:'',
-        price: '',
-        category:'',
-        popular:'',
-    }],
+    windowItems: [{}],
     isLoad: false,
 }
 
@@ -24,7 +16,8 @@ const getItemReducer = (state=initialState,action) =>{
    else if(action.type === 'GET_BOOLEAN'){
         return{
             ...state,
-            isLoad: false
+            isLoad: false,
+            windowItems: [{}]
         }
     }
    return state

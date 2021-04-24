@@ -7,6 +7,9 @@ body{
   font-family: sans-serif;
   text-decoration: none;
 }
+a{
+  color: black;
+}
 html {
   overflow-y: scroll;
 }

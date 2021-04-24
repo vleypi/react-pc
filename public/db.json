@@ -3,7 +3,11 @@
         {
             "id": 1,
             "path": "videocard",
-            "image": "https://c.dns-shop.ru/thumb/st4/fit/500/500/57a696c54ba73600df7c9f5b006f47cd/6895c05e6593667ba3120074be31b365104490d8d2997a6e814a47a3629d0267.jpg",
+            "images": [
+                "https://c.dns-shop.ru/thumb/st4/fit/500/500/57a696c54ba73600df7c9f5b006f47cd/6895c05e6593667ba3120074be31b365104490d8d2997a6e814a47a3629d0267.jpg",
+                "https://c.dns-shop.ru/thumb/st1/fit/500/500/e64d441b054de349fe7043c45eb770c2/e663523af82a2a7aceda6e6cf12999011f024554f73969d3f76a51b5b85f24ff.jpg",
+                "https://c.dns-shop.ru/thumb/st1/fit/500/500/feb6d50b19fcdd80477b47abe0b02328/3f2ed441b732ccf15661c9be1932e4675e2c0837c1a2135411aafd02271526ff.jpg"
+            ],
             "name": "Видеокарта MSI GeForce GTX 1650 D6 GAMING X",
             "price": 23000,
             "category": 0,
@@ -12,7 +16,9 @@
         {
             "id": 2,
             "path": "processor",
-            "image": "https://c.dns-shop.ru/thumb/st4/fit/500/500/8a24bc60ae6d69b120d238da94b850c7/aeb8cc94e6f6770ce048f1b12649a340f65d9ad76c612b2aa9b0998d7413299d.jpg",
+            "images": [
+                "https://c.dns-shop.ru/thumb/st4/fit/500/500/8a24bc60ae6d69b120d238da94b850c7/aeb8cc94e6f6770ce048f1b12649a340f65d9ad76c612b2aa9b0998d7413299d.jpg"
+            ],
             "name": "Процессор Intel Core i5-10500 BOX",
             "price": 18900,
             "category": 1,
@@ -21,16 +27,20 @@
         {
             "id": 3,
             "path": "materinskaya-plata",
-            "image": "https://c.dns-shop.ru/thumb/st4/fit/500/500/d7872c7254489791555b8e5ebaa0c666/c38ad5f5d7c795c6c95b46e80f50e336ef9ed93fc6e34999c0883be8ed568ccc.png",
+            "images": [
+                "https://c.dns-shop.ru/thumb/st4/fit/500/500/d7872c7254489791555b8e5ebaa0c666/c38ad5f5d7c795c6c95b46e80f50e336ef9ed93fc6e34999c0883be8ed568ccc.png"
+            ],
             "name": "Материнская плата ASRock Z490 Extreme4",
             "price": 23000,
             "category": 2,
             "popular": 3.0
         },
         {
-            "id": 2,
+            "id": 12,
             "path": "videocard",
-            "image": "https://c.dns-shop.ru/thumb/st4/fit/500/500/c953049929cd3aaa54e04e26b776a6cc/8416b25b4d7ffcc7b985eaf7d66d456d1c5e8166234a96170d49b40415f35af7.png",
+            "images": [
+                "https://c.dns-shop.ru/thumb/st4/fit/500/500/c953049929cd3aaa54e04e26b776a6cc/8416b25b4d7ffcc7b985eaf7d66d456d1c5e8166234a96170d49b40415f35af7.png"
+            ],
             "name": "Видеокарта Palit GeForce RTX 3090 GameRock ",
             "price": 285999,
             "category": 0,
