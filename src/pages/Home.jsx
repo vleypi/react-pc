@@ -2,6 +2,7 @@ import React from 'react'
 import {useSelector,useDispatch} from 'react-redux'
 
 import {fetchElem} from '../redux/elem'
+import {getBoolean} from '../redux/getItem'
 import {setCategory,setSort} from '../redux/filters'
 
 import '../assets/css/items.css'
@@ -9,7 +10,6 @@ import '../assets/css/categories.css'
 import Categories from '../components/Categories'
 import Sort from '../components/Sort'
 import Items from '../components/Items'
-import { NavLink } from 'react-router-dom'
 
 
 
@@ -28,6 +28,7 @@ function Home() {
 
     React.useEffect(()=>{
         dispatch(fetchElem(category,sort))
+        dispatch(getBoolean())
     },[category,sort])
 
     const onSelectCategory = (index)=>{
@@ -49,7 +50,7 @@ function Home() {
                 <div className="content">
                     <h1>Все товары:</h1>
                     {element.map((obj)=>(
-                        <NavLink to={`/${obj.id}`}><Items {...obj} key={obj.id}/></NavLink>
+                        <Items {...obj} key={obj.id}/>
                     ))}
                 </div>
             </section> 

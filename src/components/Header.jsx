@@ -7,11 +7,13 @@ import shoppingCart from '../assets/img/shopping-cart.svg'
 
 import {setCategory} from '../redux/filters'
 import {useDispatch} from 'react-redux'
+import { getBoolean } from '../redux/getItem'
 
 function Header() {
     const dispatch = useDispatch()
     const FetchNull = (index)=>{
         dispatch(setCategory(index))
+        dispatch(getBoolean())
     }
     return (
         <header onClick={()=>FetchNull(null)}>

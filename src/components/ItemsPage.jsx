@@ -6,7 +6,7 @@ function ItemsPage(props) {
     return (
             <div className={style.item}>
                 <div className={style.img_content}>
-                    <img src={props.image} alt={props.name}/>   
+                    <img className={style} src={props.image} alt={props.name}/>   
                 </div>
                 <div className={style.info_item}>
                     <p className={style.info_item_name}>{props.name}</p>

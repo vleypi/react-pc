@@ -15,7 +15,7 @@ function App() {
       <Header />
       <Route path="/" exact component={Home}/>
       <Route path="/cart" exact component={Cart} />
-      <Route path="/:id" exact component={PageItemWithRouter} />
+      <Route path="/:path/:id" exact component={PageItemWithRouter} />
     </div>
   );
 }
