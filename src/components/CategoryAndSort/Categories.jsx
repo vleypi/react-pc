@@ -1,11 +1,11 @@
 import React from 'react'
-
+import {setSeacrh} from '../../redux/elem'
 import classNames from 'classnames'
 import {useDispatch} from 'react-redux'
 import hamburger from '../../assets/img/hamburger_button_menu_icon_155296.svg'
 import { NavLink } from 'react-router-dom'
 
-function Categories({items,onClickCategory}) {
+const Categories = React.memo(function Categories({items,onClickCategory}) {
 
     const [activeItem,setActiveItem] = React.useState(null)
     const [visableCat,setVisableCat] = React.useState(false)
@@ -25,18 +25,18 @@ function Categories({items,onClickCategory}) {
     const onActiveItem = (index) =>{
         setActiveItem(index)
         onClickCategory(index)
+        dispatch(setSeacrh('',false))
     }
 
     const onAllActive = (index) =>{
         setActiveItem(index)
         onClickCategory(index)
+        dispatch(setSeacrh('',false))
     }
 
     const onVisable = () =>{
         setVisableCat(!visableCat)
     }
-
-
 
 
     return (
@@ -64,6 +64,6 @@ function Categories({items,onClickCategory}) {
             </div>
         </div>
     )
-}
+})
 
 export default Categories

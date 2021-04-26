@@ -2,6 +2,8 @@ import axios from "axios"
 
 const initialState = {
     element: [],
+    search: [],
+    boolean: false,
 }
 
 const elements = (state=initialState, action) =>{
@@ -16,6 +18,12 @@ const elements = (state=initialState, action) =>{
                 ...state,
                 item: action.payload
             }
+        case 'SET_SEARCH':
+            return{
+                ...state,
+                search: action.payload,
+                boolean: action.boolean
+            }
         default:
             return state
     }
@@ -26,12 +34,19 @@ export const setElem = (elem) =>({
     payload: elem,
 })
 
+export const setSeacrh = (elem,boolean) =>({
+    type: 'SET_SEARCH',
+    payload: elem,
+    boolean,
+})
 
 export const fetchElem = (category,sort) => (dispatch) =>{
     axios.get(`http://localhost:3002/elem?${category !== null ? `category=${category}` : ''}&_sort=${sort.type}&_order=${sort.order}`).then(({ data }) => {
         dispatch(setElem(data));
     });
 }
+
+
 
 
 

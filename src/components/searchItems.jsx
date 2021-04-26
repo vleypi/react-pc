@@ -1,13 +1,24 @@
 import React from 'react'
 
-import {useSelector,useDispatch} from 'react-redux'
+import {useSelector} from 'react-redux'
 import { NavLink } from 'react-router-dom'
 
-function Items() {
-    const element = useSelector(({elements})=>elements.element);
+function SearchItems() {
+    const search = useSelector(({elements})=>elements.search);
+    const [length,setLength] = React.useState(false)
+    React.useEffect(()=>{
+        if(search.length > 0){
+            setLength(true)
+            console.log(true)
+        }
+        else if(search.length === 0){
+            setLength(false)
+            console.log(false)
+        }
+    },[])
     return (
         <>
-            {element.map((obj)=>(
+            {search.map((obj)=>(
                 <div className="item">
                     <NavLink to={`${obj.path}/${obj.id}`}>
                     <div className="img-content">
@@ -29,4 +40,4 @@ function Items() {
     )
 }
 
-export default Items
+export default SearchItems

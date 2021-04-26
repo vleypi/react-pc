@@ -15,7 +15,7 @@ const sortName = [
   ];
 
 
-function CategoriesContainer() {
+const CategoriesContainer = React.memo(function CategoriesContainer() {
     const dispatch = useDispatch();
     const {category,sort} = useSelector(({filters})=>filters)
     const isLoad = useSelector(({getitem})=>getitem.isLoad)
@@ -39,6 +39,6 @@ function CategoriesContainer() {
             </div>
         </nav>
     )
-}
+})
 
 export default CategoriesContainer
