@@ -9,14 +9,12 @@ import ItemsPage from '../components/ItemsPage'
 
 //redux
 import {getItem} from '../redux/getItem'
-import Categories from '../components/Categories'
 
 
 function PageItem(props) {
     const dispatch = useDispatch()
     const isLoaded = useSelector(({getitem}) => getitem.isLoad)
     const windowItem  = useSelector(({getitem}) => getitem.windowItems)
-    console.log(props)
     React.useEffect(()=>{
         dispatch(getItem(props.match.params.path,props.match.params.id))
     },[])

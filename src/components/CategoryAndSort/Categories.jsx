@@ -1,13 +1,16 @@
 import React from 'react'
+
 import classNames from 'classnames'
+import {useDispatch} from 'react-redux'
+import hamburger from '../../assets/img/hamburger_button_menu_icon_155296.svg'
+import { NavLink } from 'react-router-dom'
 
-import hamburger from '../assets/img/hamburger_button_menu_icon_155296.svg'
-
-const Categories = React.memo(function Categories({items,onClickCategory}) {
+function Categories({items,onClickCategory}) {
 
     const [activeItem,setActiveItem] = React.useState(null)
     const [visableCat,setVisableCat] = React.useState(false)
     const ref = React.useRef()
+    const dispatch = useDispatch()
 
     React.useEffect(() => {
        document.body.addEventListener('click',falseVisable)
@@ -44,22 +47,23 @@ const Categories = React.memo(function Categories({items,onClickCategory}) {
             </div>
             <div className={`${"categories-block"} ${visableCat === true ? 'categories-block-active' : ''}`}>
                 <ul>
-                    <li onClick={()=>onAllActive(null)} className={activeItem === null ? 'active' : ''}>Все</li>
+                    <li onClick={()=>onAllActive(null)} className={activeItem === null ? 'actives' : ''}>Все</li>
                     {items.map((catName,index)=>(
-                        <li
+                        <NavLink to="/"><li
                             onClick={()=> onActiveItem(index)}
                             className={classNames({
-                                active: activeItem === index,
+                                actives: activeItem === index,
                             })}
                             key={`${index}_item`}
                         >
                             {catName}
-                    </li>
+                        </li>
+                        </NavLink>
                     ))}
                 </ul>       
             </div>
         </div>
     )
-})
+}
 
 export default Categories

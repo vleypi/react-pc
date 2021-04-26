@@ -10,11 +10,11 @@ import {useDispatch} from 'react-redux'
 
 function Header() {
     const dispatch = useDispatch()
-    const FetchNull = (index)=>{
-        dispatch(setCategory(index))
+    const FetchNull = ()=>{
+        dispatch(setCategory(null))
     }
     return (
-        <header onClick={()=>FetchNull(null)}>
+        <header onClick={()=>FetchNull()}>
         <div className="content">
             <NavLink to='/' className="logo-name">
                 <img src={graphicCart} alt="graphicCart"/>

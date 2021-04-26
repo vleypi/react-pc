@@ -1,7 +1,6 @@
 import React from 'react'
 
 import arrow from '../assets/img/arrow.png'
-
 import style from   '../assets/css/itemsPage.module.css'
 import star from '../assets/img/blackstar.svg'
 
@@ -39,6 +38,7 @@ function ItemsPage(props) {
                             <p
                                 className={`imgWillChoose ${img === obj ? 'imgIsChoosing' : ''}`}
                                 onClick={()=>onSetImg(obj)}
+                                key={obj}
                             >{obj}</p>
                         ))}
                     </div>

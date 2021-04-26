@@ -1,5 +1,6 @@
 .categories-and-sort{
     margin-top: 104px;
+    margin-bottom: 30px;
 }
 .categories-and-sort .content{
     display: flex;
@@ -20,7 +21,7 @@
 .categories:hover{
     background-color: rgba(0, 0, 0, 0.466)
 }
-.categories:active{
+.categories:actives{
     background-color: rgb(0, 0, 0)
 }
 .categories p{
@@ -40,11 +41,11 @@
     margin-left: 5px;
 }
 
-.active{
+.actives{
     background-color: black;
     color: white;
 }
-.categories-block ul li.active:hover{
+.categories-block ul li.actives:hover{
     background-color: rgb(0, 0, 0);
     color: rgb(255, 255, 255);
 }
@@ -89,7 +90,7 @@
     height: 40px;
     padding: 0 5px;
 }
-.sort-block ul li.active:hover{
+.sort-block ul li.actives:hover{
     background-color: black;
 }
 .sort-block ul li:hover{
