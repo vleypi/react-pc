@@ -48,17 +48,28 @@ header .content{
     border-radius: 20px;
 }
 
+.ButtonSearch{
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 20px;
+}
 .search{
     width: 20px;
     height: 20px;
 }
 
 .searchClick{
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    right: 20px;
     cursor: pointer;
+}
+
+.SeacrhFalse{
+    opacity: 0.3;
+    transition: 0.2s;
+    cursor:no-drop;
 }
 
 .cart-nav{

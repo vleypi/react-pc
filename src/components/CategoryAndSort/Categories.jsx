@@ -1,5 +1,4 @@
 import React from 'react'
-import {setSeacrh} from '../../redux/elem'
 import classNames from 'classnames'
 import {useDispatch} from 'react-redux'
 import hamburger from '../../assets/img/hamburger_button_menu_icon_155296.svg'
@@ -25,13 +24,11 @@ const Categories = React.memo(function Categories({items,onClickCategory}) {
     const onActiveItem = (index) =>{
         setActiveItem(index)
         onClickCategory(index)
-        dispatch(setSeacrh('',false))
     }
 
     const onAllActive = (index) =>{
         setActiveItem(index)
         onClickCategory(index)
-        dispatch(setSeacrh('',false))
     }
 
     const onVisable = () =>{

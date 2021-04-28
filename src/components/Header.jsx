@@ -6,16 +6,16 @@ import graphicCart from '../assets/img/graphics-card.svg'
 import shoppingCart from '../assets/img/shopping-cart.svg'
 
 import {setCategory} from '../redux/filters'
-import {setSeacrh} from '../redux/elem'
 import {useDispatch} from 'react-redux'
-import Search from './search'
+import Search from './search/search'
+import {getBooleanSearch} from '../redux/search'
 
 
 function Header() {
     const dispatch = useDispatch()
     const FetchNull = ()=>{
         dispatch(setCategory(null))
-        dispatch(setSeacrh('',false))
+        dispatch(getBooleanSearch(false))
     }
     return (
         <header>
