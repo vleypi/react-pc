@@ -33,7 +33,7 @@ export const setElem = (elem) =>({
 })
 
 export const fetchElem = (category,sort) => (dispatch) =>{
-    axios.get(`http://localhost:3002/elem?${category !== null ? `category=${category}` : ''}&_sort=${sort.type}&_order=${sort.order}`).then(({ data }) => {
+    axios.get(`http://localhost:3002/elem?_limit=4&${category !== null ? `category=${category}` : ''}&_sort=${sort.type}&_order=${sort.order}`).then(({ data }) => {
         dispatch(setElem(data));
     });
 }

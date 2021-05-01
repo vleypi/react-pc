@@ -1,6 +1,6 @@
 import React from 'react'
 
-function ResultNothing() {
+function ResultNothing({resultValid}) {
     return (
         <div>
             Ничего не найдено...

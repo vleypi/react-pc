@@ -4,6 +4,7 @@ import {useDispatch} from 'react-redux'
 import {NavLink} from 'react-router-dom'
 import {setTextSearchAC,getBooleanSearch} from '../../redux/search'
 import searchImg from '../../assets/img/search.svg'
+import { getBoolean } from '../../redux/getItem'
 
 function Search() {
     const dispatch = useDispatch()
@@ -16,6 +17,7 @@ function Search() {
         axios.get('http://localhost:3002/elem').then(({data})=>{
             dispatch(setTextSearchAC(text,data))
             dispatch(getBooleanSearch(true))
+            dispatch(getBoolean())
         })
     }
     React.useEffect(()=>{

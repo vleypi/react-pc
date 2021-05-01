@@ -9,6 +9,7 @@ import ItemsPage from '../components/ItemsPage'
 
 //redux
 import {getItem} from '../redux/getItem'
+import { getBooleanSearch } from '../redux/search'
 
 
 function PageItem(props) {
@@ -17,6 +18,7 @@ function PageItem(props) {
     const windowItem  = useSelector(({getitem}) => getitem.windowItems)
     React.useEffect(()=>{
         dispatch(getItem(props.match.params.path,props.match.params.id))
+        dispatch(getBooleanSearch(false))
     },[])
     return (
         <div className="content">

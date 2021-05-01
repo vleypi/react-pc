@@ -2,7 +2,7 @@ import React from 'react'
 
 import style from '../assets/css/preLoader.module.css'
 
-function PreLoader() {
+function PreLoader({classes}) {
     return (
         <div className={style.preloader_background}>
             <div className={style.preLoader}>

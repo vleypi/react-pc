@@ -15,7 +15,6 @@ function Header() {
     const dispatch = useDispatch()
     const FetchNull = ()=>{
         dispatch(setCategory(null))
-        dispatch(getBooleanSearch(false))
     }
     return (
         <header>

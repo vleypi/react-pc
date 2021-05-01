@@ -4,7 +4,6 @@ import {useSelector,useDispatch} from 'react-redux'
 import '../assets/css/items.css'
 import '../assets/css/categories.css'
 import Items from '../components/Items'
-import ResultItems from '../components/search/resultitems'
 import {getBoolean} from '../redux/getItem'
 import { getBooleanSearch } from '../redux/search'
 
@@ -23,7 +22,6 @@ function Home() {
                 <div className="content">
                     <h1>Все товары:</h1>
                    <Items />  
-                   <ResultItems />
                 </div>
             </section> 
         </>
