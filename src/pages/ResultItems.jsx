@@ -1,13 +1,10 @@
 import React from 'react'
 import {NavLink} from 'react-router-dom'
-import {useSelector,useDispatch} from 'react-redux'
+import {useSelector} from 'react-redux'
 import ResultNothing from '../components/search/resultNothing'
 import PreLoader from '../components/PreLoader'
-import {setTextSearchAC,getBooleanSearch} from '../redux/search'
-import {getBoolean} from '../redux/getItem'
 
 function ResultItemsSearch() {
-    const dispatch = useDispatch()
     const isLoad = useSelector(({search}) => search.boolean)
     const seacrText = useSelector(({search}) => search.searchText)
     const searchItem = useSelector(({search}) => search.searchItem)
@@ -22,7 +19,7 @@ function ResultItemsSearch() {
         else {
             setResultValid(true)
         }
-    })
+    },[])
     return (
         <div className="content">
             {isLoad ? 

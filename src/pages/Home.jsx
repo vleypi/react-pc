@@ -1,5 +1,5 @@
 import React from 'react'
-import {useSelector,useDispatch} from 'react-redux'
+import {useDispatch} from 'react-redux'
 
 import '../assets/css/items.css'
 import '../assets/css/categories.css'
@@ -10,7 +10,6 @@ import { getBooleanSearch } from '../redux/search'
 
 function Home() {
     const dispatch = useDispatch();
-    const boolean = useSelector(({search}) => search.boolean)
     React.useEffect(()=>{
         dispatch(getBooleanSearch(false))
         dispatch(getBoolean())

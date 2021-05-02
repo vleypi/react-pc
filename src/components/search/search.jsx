@@ -33,7 +33,7 @@ function Search() {
             <input className="input-header" placeholder="Поиск по магазину..."  onChange={(e)=>onSetTextSearch(e.target.value)}/>
             <button disabled={buttonValid} className="ButtonSearch" onClick={()=>postText(textSearch)}>
                 <NavLink className="searchClick" to={!buttonValid ? '/search' : '/'}>
-                    <img src={searchImg} className={`search ${buttonValid ? 'SeacrhFalse' : ''}`}/>
+                    <img src={searchImg} alt="seacrh" className={`search ${buttonValid ? 'SeacrhFalse' : ''}`}/>
                 </NavLink>
             </button>
         </div>

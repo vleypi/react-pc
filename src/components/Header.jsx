@@ -8,7 +8,6 @@ import shoppingCart from '../assets/img/shopping-cart.svg'
 import {setCategory} from '../redux/filters'
 import {useDispatch} from 'react-redux'
 import Search from './search/search'
-import {getBooleanSearch} from '../redux/search'
 
 
 function Header() {
