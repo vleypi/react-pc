@@ -14,7 +14,6 @@ const sortName = [
 const CategoriesContainer = React.memo(function CategoriesContainer() {
     const dispatch = useDispatch();
     const isLoad = useSelector(({getitem})=>getitem.isLoad)
-    const fromSearch = useSelector(({search})=>search.boolean)
     const onSelectCategory = (index)=>{
         dispatch(setCategory(index))
     }
@@ -25,7 +24,7 @@ const CategoriesContainer = React.memo(function CategoriesContainer() {
         <nav className="categories-and-sort">
             <div className="content">
                 <Categories onClickCategory={onSelectCategory} items={categories}/>
-                {isLoad === false && fromSearch === false && <Sort sortName={sortName} onSelectSort={onSelectSort} activeSortType={sortName.type}/>}
+                {isLoad === true  && <Sort sortName={sortName} onSelectSort={onSelectSort} activeSortType={sortName.type}/>}
             </div>
         </nav>
     )

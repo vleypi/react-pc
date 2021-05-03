@@ -5,26 +5,26 @@ import ResultNothing from '../components/search/resultNothing'
 import PreLoader from '../components/PreLoader'
 
 function ResultItemsSearch() {
-    const isLoad = useSelector(({search}) => search.boolean)
+    const isLoadSeacrh = useSelector(({search}) => search.isLoadSeacrh)
     const seacrText = useSelector(({search}) => search.searchText)
     const searchItem = useSelector(({search}) => search.searchItem)
-    const [resultValid,setResultValid] = React.useState(false)
     const filter = searchItem.filter(item=>{
         return item.name.toLowerCase().includes(seacrText.toLowerCase())
     })
+    const [resultIsNothing, setResultIsNothing] = React.useState(false)
     React.useEffect(()=>{
-        if(filter.length === 0) {
-            setResultValid(false)
+        if(filter.length > 0){
+            setResultIsNothing(true)
         }
-        else {
-            setResultValid(true)
+        else{
+            setResultIsNothing(false)
         }
-    },[])
+    },[filter])
     return (
         <div className="content">
-            {isLoad ? 
+            {isLoadSeacrh === true ? 
                 <div>
-                    {resultValid === true ? <div>
+                    {resultIsNothing ? <div>
                         {filter.map((obj)=>(
                             <div className="item">
                                 <NavLink to={`${obj.path}/${obj.id}`}>
@@ -43,8 +43,7 @@ function ResultItemsSearch() {
                                 </div>
                             </div>
                         ))}
-                    </div> :
-                    <ResultNothing/>}
+                    </div> : <ResultNothing /> }
                 </div>
             : <PreLoader />}
         </div>
@@ -52,3 +51,5 @@ function ResultItemsSearch() {
 }
 
 export default ResultItemsSearch
+
+

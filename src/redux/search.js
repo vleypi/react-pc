@@ -1,35 +1,43 @@
+import axios from 'axios'
+
 const initialState = {
     searchText: '',
     searchItem: [],
-    boolean: false
+    isLoadSeacrh: false
 }
 
 const search = (state=initialState,action) =>{
-    if(action.type === 'SET_TEXT_SEARCH'){
+    if(action.type === 'SET_SEARCH_BOOLEAN'){
         return{
             ...state,
-            searchText: action.payload,
-            searchItem: action.payloadItem
+            isLoadSeacrh: false
         }
     }
-    else if(action.type === 'GET_BOOLEAN_SEARCH'){
+    else if(action.type === 'SET_SEACRH_ITEM'){
         return{
             ...state,
-            boolean: action.payload
+            searchText: action.text,
+            searchItem: action.item,
+            isLoadSeacrh: true
         }
     }
     return state
 }
 
-export const setTextSearchAC = (text,data) =>({
-    type: 'SET_TEXT_SEARCH',
-    payload: text,
-    payloadItem: data
+export const setSaerchBoolean = () =>({
+    type: 'SET_SEARCH_BOOLEAN'
 })
 
-export const getBooleanSearch = (boolean) =>({
-    type: 'GET_BOOLEAN_SEARCH',
-    payload: boolean
+export const setSeacrhItem = (text,data) =>({
+    type: 'SET_SEACRH_ITEM',
+    item: data,
+    text: text,
 })
+
+export const setTextSearchAC = text => dispatch =>{
+    axios.get('http://localhost:3002/elem').then(({data})=>{
+        dispatch(setSeacrhItem(text,data))
+    })
+}
 
 export default search
