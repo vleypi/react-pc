@@ -5,13 +5,12 @@ import { NavLink } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { setCategory } from '../../redux/filters'
 
-const categories = ['Видеокарты','Процессоры','Материнские платы', 'ОЗУ','Блоки питания','Корпуса','Накопители','Охлаждение']
+const categories = [{name: 'Видеокарты'},{name:'Процессоры'},{name:'Материнские платы'},{name:'ОЗУ'},{name:'Блоки питания'},{name:'Корпуса'},{name:'Накопители'},{name:'Охлаждение'}]
 const Categories = React.memo(function Categories() {
     const dispatch = useDispatch()
     //active
-    const activeItem = useSelector(({filters}) => filters.category)
-    const onSelectCategory = (index)=>{
-        dispatch(setCategory(index))
+    const onSelectCategory = (index,name)=>{
+        dispatch(setCategory(index,name))
     }
     //visable
     const [visableCat,setVisableCat] = React.useState(false)
@@ -37,15 +36,12 @@ const Categories = React.memo(function Categories() {
                 </div>
                 <div className={`${"categories-block"} ${visableCat === true ? 'categories-block-active' : ''}`}>
                     <ul>
-                        <NavLink to="/"><li onClick={()=> onSelectCategory (null)} className={activeItem === null ? 'actives' : ''}>Все</li></NavLink>
+                        <NavLink to="/"><li onClick={()=> onSelectCategory (null,'Все товары:')}>Все</li></NavLink>
                         {categories.map((catName,index)=>(
                             <NavLink to="/"  key={`${index}_cat`}><li
-                                onClick={()=> onSelectCategory(index)}
-                                className={classNames({
-                                    actives: activeItem === index,
-                                })}
+                                onClick={()=> onSelectCategory(index,catName.name)}
                             >
-                                {catName}
+                                {catName.name}
                             </li>
                             </NavLink>
                         ))}

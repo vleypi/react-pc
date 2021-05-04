@@ -1,5 +1,8 @@
 const initialState = {
-    category: null,
+    category: {
+        catIndex: null,
+        name: 'Все товары:'
+    },
     sort: {
         type: 'popular',
         name: 'популярности',
@@ -12,7 +15,10 @@ const filters = (state=initialState,action) =>{
         case 'SET_CATEGORY':
             return{
                 ...state,
-                category: action.payload
+                category: {
+                    catIndex: action.payload,
+                    name: action.payloadName
+                }
             }
         case 'SET_SORT':
             return{
@@ -23,14 +29,15 @@ const filters = (state=initialState,action) =>{
     }
 }
 
-export const setSort = (type,name) =>({
+export const setSort = (type) =>({
     type: 'SET_SORT',
     payload: type,
 })
 
-export const setCategory = (catIndex) =>({
+export const setCategory = (catIndex,name) =>({
     type: 'SET_CATEGORY',
     payload: catIndex,
+    payloadName: name
 })
 
 export default filters

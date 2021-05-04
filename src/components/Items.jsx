@@ -9,7 +9,7 @@ function Items() {
     const element = useSelector(({elements})=>elements.element);
     const {category,sort} = useSelector(({filters})=>filters)
     React.useEffect(()=>{
-        dispatch(fetchElem(category,sort))
+        dispatch(fetchElem(category.catIndex,sort))
     },[category,sort])
     return (
         <>
