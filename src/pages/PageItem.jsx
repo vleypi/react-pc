@@ -8,7 +8,7 @@ import ItemsPage from '../components/ItemsPage'
 
 
 //redux
-import {getBoolean, getItem} from '../redux/getItem'
+import { getBooleanPage, getItem} from '../redux/getItem'
 
 
 function PageItem(props) {
@@ -16,7 +16,7 @@ function PageItem(props) {
     const isLoaded = useSelector(({getitem}) => getitem.isLoad)
     const windowItem  = useSelector(({getitem}) => getitem.windowItems)
     React.useEffect(()=>{
-        dispatch(getBoolean())
+        dispatch(getBooleanPage())
         dispatch(getItem(props.match.params.path,props.match.params.id))
     },[])
     return (

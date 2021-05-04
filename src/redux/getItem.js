@@ -13,11 +13,10 @@ const getItemReducer = (state=initialState,action) =>{
            isLoad: true
        }
    }
-   else if(action.type === 'GET_BOOLEAN'){
+   else if(action.type === 'GET_BOOLEAN_PAGE'){
         return{
             ...state,
             isLoad: false,
-            windowItems: [{}]
         }
     }
    return state
@@ -28,8 +27,8 @@ export const getItemAC = (windowItem)=>({
     payload: windowItem,
 })
 
-export const getBoolean= ()=>({
-    type: 'GET_BOOLEAN',
+export const getBooleanPage = ()=>({
+    type: 'GET_BOOLEAN_PAGE',
 })
 
 export const getItem = (path,id) => dispatch =>{

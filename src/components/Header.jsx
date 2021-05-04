@@ -23,7 +23,7 @@ function Header() {
                 <p>REACT-PC</p>
             </NavLink>
             <Search />
-            <NavLink to='/cart' onClick={()=>FetchNull()}>
+            <NavLink to='/cart'>
             <div className="cart-nav">
                 <p>555 ₽</p>
                 <div>

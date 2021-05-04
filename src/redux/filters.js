@@ -1,7 +1,9 @@
 const initialState = {
     category: null,
     sort: {
-        type: ''
+        type: 'popular',
+        name: 'популярности',
+        order: 'desc'
     }
 }
 
@@ -21,7 +23,7 @@ const filters = (state=initialState,action) =>{
     }
 }
 
-export const setSort = (type) =>({
+export const setSort = (type,name) =>({
     type: 'SET_SORT',
     payload: type,
 })

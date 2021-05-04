@@ -2,7 +2,7 @@ import React from 'react'
 
 function ResultNothing({resultValid}) {
     return (
-        <div>
+        <div className="result_is_nothing"> 
             Ничего не найдено...
         </div>
     )
