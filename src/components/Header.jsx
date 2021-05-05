@@ -13,7 +13,7 @@ import Search from './search/search'
 function Header() {
     const dispatch = useDispatch()
     const FetchNull = ()=>{
-        dispatch(setCategory(null))
+        dispatch(setCategory(null,'Все товары:'))
     }
     return (
         <header>

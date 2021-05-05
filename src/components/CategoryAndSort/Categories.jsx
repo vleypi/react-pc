@@ -1,8 +1,7 @@
 import React from 'react'
-import classNames from 'classnames'
 import hamburger from '../../assets/img/hamburger_button_menu_icon_155296.svg'
 import { NavLink } from 'react-router-dom'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch} from 'react-redux'
 import { setCategory } from '../../redux/filters'
 
 const categories = [{name: 'Видеокарты'},{name:'Процессоры'},{name:'Материнские платы'},{name:'ОЗУ'},{name:'Блоки питания'},{name:'Корпуса'},{name:'Накопители'},{name:'Охлаждение'}]

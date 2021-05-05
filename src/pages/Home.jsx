@@ -16,7 +16,7 @@ function Home() {
                         <h1>{name.name}</h1>
                         <Sort />
                     </div>
-                   <Items/>  
+                   <Items/>
                 </div>
             </section> 
         </>

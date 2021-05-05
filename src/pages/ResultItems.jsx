@@ -26,7 +26,7 @@ function ResultItemsSearch() {
                 <div>
                     {resultIsNothing ? <div>
                         {filter.map((obj)=>(
-                            <div className="item">
+                            <div className="item" key={`${obj.name}_${obj}`}>
                                 <NavLink to={`${obj.path}/${obj.id}`}>
                                 <div className="img-content">
                                     <img src={obj.images[0]} alt={obj.name}/>   

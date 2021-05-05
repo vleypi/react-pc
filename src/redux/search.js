@@ -35,6 +35,7 @@ export const setSeacrhItem = (text,data) =>({
 })
 
 export const setTextSearchAC = text => dispatch =>{
+    dispatch(setSaerchBoolean())
     axios.get('http://localhost:3002/elem').then(({data})=>{
         dispatch(setSeacrhItem(text,data))
     })

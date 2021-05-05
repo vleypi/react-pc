@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {useDispatch,useSelector} from 'react-redux'
+import {useDispatch} from 'react-redux'
 import {NavLink} from 'react-router-dom'
 import {setTextSearchAC,setSaerchBoolean} from '../../redux/search'
 import searchImg from '../../assets/img/search.svg'
@@ -10,7 +10,6 @@ function Search() {
     const [textSearch, setTextSearch] = React.useState('')
     const [buttonValid,setButtonValid] = React.useState(false)
     const postText = (text) =>{
-        dispatch(setSaerchBoolean())
         dispatch(setTextSearchAC(text))
     }
     React.useEffect(()=>{

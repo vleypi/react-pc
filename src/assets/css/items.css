@@ -135,3 +135,33 @@
     justify-content: space-between;
     align-items: center;
 }
+.display_block_item{
+    display: block;
+}
+.popularItems{
+    margin-top: 10px;
+    display: flex;
+}
+.popularItems img{
+    width: 20px;
+    margin-right: 5px;
+}
+.compare{
+    max-width: 120px;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+.compare .checkbox{
+    width: 15px;
+    height: 15px;
+    background: transparent;
+    cursor: pointer;
+    border: 2px black solid;
+    margin-right: 5px;
+    border-radius: 5px;
+}
+.compare .active{
+    background: black;
+}
