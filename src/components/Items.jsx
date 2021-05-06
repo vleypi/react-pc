@@ -6,6 +6,7 @@ import star from '../assets/img/blackstar.svg'
 import {useSelector,useDispatch} from 'react-redux'
 import { NavLink } from 'react-router-dom'
 import { fetchElem } from '../redux/elem';
+import { setCart } from '../redux/cart'
 
 function Items() {
     const dispatch = useDispatch()
@@ -15,6 +16,11 @@ function Items() {
     React.useEffect(()=>{
         dispatch(fetchElem(category.catIndex,sort))
     },[category,sort])
+
+    const postCart = (obj) =>{
+        dispatch(setCart(obj))
+    }
+
     return (
         <>
             {isLoad ? 
@@ -42,7 +48,7 @@ function Items() {
                             </div>
                             <div className="stopCLick">
                                 <p className="price">{obj.price} ₽</p>
-                                <p className="buy">Купить</p>
+                                <p className="buy"  onClick={()=>postCart(obj)}>Купить</p>
                             </div>
                         </div>
                     </div>

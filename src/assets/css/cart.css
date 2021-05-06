@@ -1,0 +1,119 @@
+.cart{
+    margin-top: 30px;
+}
+.cart h1{
+    font-size: 34px;
+    color: white;
+}
+.items_cart{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 10px 100px;
+}
+.item_cart{
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    padding: 20px 20px;
+    border-top: 1px solid black;
+}
+.item_cart:nth-child(1){
+    border-top: 1px solid transparent;
+}
+
+.item_cart img{
+    width: 130px;
+    border-radius: 20px;
+    margin-right: 20px;
+}
+.cart_p{
+    width: 500px;
+}
+
+.info-item_cart{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    font-size: 20px;
+}
+.info-item_cart div .price_cart{
+    font-size: 20px;
+    text-align: center;
+    font-weight: 550;
+}
+
+.remove{
+    border: 1px black solid;
+    padding: 10px 17px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.remove:hover{
+    border: 1px black solid;
+    padding: 10px 17px;
+    border-radius: 50%;
+    color: white;
+    background-color: black;
+}
+.pay_cart{
+    padding: 0px 10px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.total_cart{
+    display: flex;
+    justify-content: space-between;
+    font-size: 25px;
+}
+.action_cart{
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+.backToHome{
+    opacity: 0.5;
+    border: 1px black solid;
+    padding: 10px 30px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.backToHome:active{
+    opacity: 0.7;
+}
+.pay_sum{
+    border: 1px black solid;
+    background-color: black;
+    color: white;
+    padding: 10px 30px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.pay_sum:active{
+    background-color: rgba(0, 0, 0, 0.815);
+}
+.nothing_cart{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 100px 0;
+    text-align: center;
+}
+.cartNothing{
+    text-align: center;
+}
+.cartNothing h2{
+    font-size: 30px;
+}
+.cartP{
+    margin-top: 30px;
+}
+.manWcart img{
+    margin-top: 60px;
+    margin-bottom: 60px;
+    width: 400px;
+}
