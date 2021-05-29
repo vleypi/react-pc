@@ -13,8 +13,12 @@ import CartNothing from '../components/cartNotThing'
 function Cart() {
     const dispatch = useDispatch()
     const cartElem = useSelector(({cart}) => cart.cartElem)
+    const totalCart = useSelector(({cart}) => cart.totalCart)
+    const totalCost = useSelector(({cart}) => cart.totalCost)
     const [elem, setElem] = React.useState(cartElem)
-    const remove = (index) =>{
+    const [minusCost, setMinusCost] = React.useState(0)
+    const remove = (index,price) =>{
+        setMinusCost(price)
         const elemsFilter = cartElem.filter(el => {
             return el.id !== cartElem[index].id
         })
@@ -22,7 +26,7 @@ function Cart() {
     }
     const [cartValid,setCartValid] = React.useState(false)
     React.useEffect(()=>{
-        dispatch(updateCart(elem))
+        dispatch(updateCart(elem,minusCost))
     },[elem])
     React.useEffect(()=>{
         if(cartElem.length > 0){
@@ -46,9 +50,9 @@ function Cart() {
                                 <div className="info-item_cart">
                                     <p className="cart_p">{obj.name}</p>
                                      <div className="prices">
-                                        <p className="price_cart">23000 ₽</p>
+                                        <p className="price_cart">{obj.price} ₽</p>
                                     </div>
-                                    <div className="remove" onClick={()=>remove(index)}>
+                                    <div className="remove" onClick={()=>remove(index,obj.price)}>
                                         <p className="remove_cart">x</p>
                                     </div>
                                 </div>
@@ -56,8 +60,8 @@ function Cart() {
                         ))}
                         <div className="pay_cart">
                             <div className="total_cart">
-                                <p className="product_cart">Всего товаров: 3</p>
-                                <p className="sum_cart">Сумма заказа: 49000 ₽</p>
+                                <p className="product_cart">Всего товаров: {totalCart}</p>
+                                <p className="sum_cart">Сумма заказа: {totalCost} ₽</p>
                             </div>
                             <div className="action_cart">
                                 <NavLink to='/' className="backToHome">Вернуться назад</NavLink>

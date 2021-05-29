@@ -6,12 +6,14 @@ import graphicCart from '../assets/img/graphics-card.svg'
 import shoppingCart from '../assets/img/shopping-cart.svg'
 
 import {setCategory} from '../redux/filters'
-import {useDispatch} from 'react-redux'
+import {useDispatch,useSelector} from 'react-redux'
 import Search from './search/search'
 
 
 function Header() {
     const dispatch = useDispatch()
+    const totalCart = useSelector(({cart}) => cart.totalCart)
+    const totalCost = useSelector(({cart}) => cart.totalCost)
     const FetchNull = ()=>{
         dispatch(setCategory(null,'Все товары:'))
     }
@@ -25,10 +27,10 @@ function Header() {
             <Search />
             <NavLink to='/cart'>
             <div className="cart-nav">
-                <p>555 ₽</p>
+                <p>{totalCost} ₽</p>
                 <div>
                     <img src={shoppingCart} alt="shoppingCart"/>
-                    <p>3</p>
+                    <p>{totalCart}</p>
                 </div>
             </div>
             </NavLink>

@@ -165,3 +165,9 @@
 .compare .active{
     background: black;
 }
+.buttonToCart{
+    color: white;
+}
+.buttonToCart:hover{
+    color: black;
+}

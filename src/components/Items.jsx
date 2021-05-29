@@ -12,6 +12,7 @@ function Items() {
     const dispatch = useDispatch()
     const element = useSelector(({elements})=>elements.element);
     const isLoad = useSelector(({elements}) => elements.isLoadAllElement);
+    const cart = useSelector(({cart})=>cart.cartElem)
     const {category,sort} = useSelector(({filters})=>filters)
     React.useEffect(()=>{
         dispatch(fetchElem(category.catIndex,sort))
@@ -48,7 +49,7 @@ function Items() {
                             </div>
                             <div className="stopCLick">
                                 <p className="price">{obj.price} ₽</p>
-                                <p className="buy"  onClick={()=>postCart(obj)}>Купить</p>
+                                {cart.find((cartItem)=>cartItem.id==obj.id) ? <button className="buy"><NavLink className="buttonToCart" to="/cart">В корзине</NavLink></button> :  <button className="buy" onClick={()=>postCart(obj)}>Купить</button>}
                             </div>
                         </div>
                     </div>

@@ -1,32 +1,38 @@
 const initialState = {
-    cartElem: []
+    cartElem: [],
+    totalCart: 0,
+    totalCost: 0
 }
 
 const cart = (state=initialState,action) =>{
     if(action.type === 'SET_CART'){
+        state.totalCost+=action.payload.price
         return{
             ...state,
-            cartElem: [...state.cartElem,{...action.payload}]
+            cartElem: [...state.cartElem,{...action.payload}],
+            totalCart: state.cartElem.length+1,
         }
     }
     if(action.type === 'UPDATE_CART'){
+        state.totalCost-=action.cost
         return{
             ...state,
-            cartElem: action.payload
+            cartElem: action.payload,
+            totalCart: action.payload.length
         }
     }
     return state
 }
 
-export const setCart = (item,count) => ({
+export const setCart = (item) => ({
     type: 'SET_CART',
     payload: item,
-    count
 })
 
-export const updateCart = (elem) =>({
+export const updateCart = (elem,cost) =>({
     type: "UPDATE_CART",
-    payload: elem
+    payload: elem,
+    cost
 })
 
 export default cart

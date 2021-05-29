@@ -1,13 +1,16 @@
 import React from 'react'
 import {NavLink} from 'react-router-dom'
-import {useSelector} from 'react-redux'
+import {useSelector,useDispatch} from 'react-redux'
 import ResultNothing from '../components/search/resultNothing'
 import PreLoader from '../components/PreLoader'
+import { setCart } from '../redux/cart'
 
 function ResultItemsSearch() {
+    const dispatch = useDispatch()
     const isLoadSeacrh = useSelector(({search}) => search.isLoadSeacrh)
     const seacrText = useSelector(({search}) => search.searchText)
     const searchItem = useSelector(({search}) => search.searchItem)
+    const cart = useSelector(({cart})=>cart.cartElem)
     const filter = searchItem.filter(item=>{
         return item.name.toLowerCase().includes(seacrText.toLowerCase())
     })
@@ -20,6 +23,9 @@ function ResultItemsSearch() {
             setResultIsNothing(false)
         }
     },[filter])
+    const postCart = (obj) =>{
+        dispatch(setCart(obj)) 
+    }
     return (
         <div className="content">
             {isLoadSeacrh === true ? 
@@ -38,7 +44,7 @@ function ResultItemsSearch() {
                                     </NavLink>
                                     <div className="stopCLick">
                                         <p className="price">{obj.price} ₽</p>
-                                        <p className="buy">Купить</p>
+                                        {cart.find((cartItem)=>cartItem.id==obj.id) ? <button className="buy"><NavLink className="buttonToCart" to="/cart">В корзине</NavLink></button> :  <button className="buy" onClick={()=>postCart(obj)}>Купить</button>}
                                     </div>
                                 </div>
                             </div>

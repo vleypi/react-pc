@@ -3,10 +3,15 @@ import React from 'react'
 import arrow from '../assets/img/arrow.png'
 import style from   '../assets/css/itemsPage.module.css'
 import star from '../assets/img/blackstar.svg'
+import {useSelector,useDispatch} from 'react-redux'
+import {NavLink} from 'react-router-dom'
+import { setCart } from '../redux/cart'
 
 const imgChosen = [0,1,2]
 
 function ItemsPage(props) {
+    const dispatch = useDispatch()
+    const cart = useSelector(({cart})=>cart.cartElem)
     const [img,setImg] = React.useState(0)
     const onSetImg = (index) =>{
         setImg(index)
@@ -22,6 +27,9 @@ function ItemsPage(props) {
         if(index === 0){
             setImg(2)
         }
+    }
+    const postCart = (obj) =>{
+        dispatch(setCart(obj))
     }
     return (
             <div className={style.item}>
@@ -51,7 +59,7 @@ function ItemsPage(props) {
                     </div>
                     <div className={style.price_div}>
                         <p className={style.price}>{props.price} ₽</p>
-                        <p className={style.buy}>Добавить</p>
+                        {cart.find((cartItem)=>cartItem.id==props.id) ? <button className="buy"><NavLink className="buttonToCart" to="/cart">В корзине</NavLink></button> :  <button className="buy" onClick={()=>postCart(props)}>Купить</button>}
                     </div>
                 </div>
             </div>
